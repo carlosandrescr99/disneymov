@@ -22,15 +22,13 @@ public class Actor{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-
-    private Integer idactor;
+    private Long id;
     
     private String name;
 
     private String image;
 
-    @Column(name = "birth")
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate birth;
     
     private long weight;
@@ -38,10 +36,10 @@ public class Actor{
     private String story;
     
     @ManyToMany (mappedBy = "actors", cascade = CascadeType.ALL)
-    private List<Video> video = new ArrayList<>();
+    private List<Video> videos = new ArrayList<>();
     
-    public void addVideo(Video video) {this.video.add(video);}
+    public void addVideo(Video video) {this.videos.add(video);}
     
-    public void removeVideo(Video video) {this.video.remove(video);}
+    public void removeVideo(Video video) {this.videos.remove(video);}
     
 }

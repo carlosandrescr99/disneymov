@@ -1,14 +1,9 @@
 
 package com.alkemy.disneymov.entity;
 
-import com.alkemy.disneymov.entity.Genre;
-import com.alkemy.disneymov.entity.Actor;
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,12 +13,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -38,7 +30,7 @@ public class Video {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer idvideo;
+    private Long id;
 
     private String title;
 
@@ -55,7 +47,7 @@ public class Video {
     private Genre genre;
     
     @Column(name = "idgenre", nullable =false)
-    private int idgenre;
+    private Long idgenre;
     
     @ManyToMany(
             cascade = {
@@ -77,7 +69,7 @@ public class Video {
     if (getClass() != obj.getClass())
         return false;
     final Video other = (Video) obj;
-    return other.idvideo == this.idvideo;
+    return other.id == this.id;
     }
     
 }
