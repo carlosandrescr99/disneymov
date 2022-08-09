@@ -29,6 +29,9 @@ public class GenreServiceImpl implements GenreService{
         List<Genre> genres = genreRepository.findAll();
         List<GenreDTO> result = genreMapper.genreList2genreDTOList(genres);
         return result;
-       
+    }
+    
+    public void delete(Long id){
+        this.genreRepository.deleteById(id);
     }
 }

@@ -9,12 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Entity
 @Table(name = "genre")
 @Getter
 @Setter
-
+@SQLDelete(sql = "UPDATE genre SET deleted = true WHERE id=?")
+@Where(clause = "deleted=false")
 public class Genre {
    
     @Id
@@ -26,5 +29,7 @@ public class Genre {
     @Basic(optional = false)
     
     private String image;
+    
+    private boolean deleted = Boolean.FALSE;
     
 }

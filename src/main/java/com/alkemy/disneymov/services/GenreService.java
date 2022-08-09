@@ -8,5 +8,5 @@ import java.util.List;
 public interface GenreService {
     GenreDTO save (GenreDTO genredto);
     List<GenreDTO> getAllGenres();
-    
+    void delete(Long id);    
 }
