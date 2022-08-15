@@ -12,7 +12,6 @@ import java.util.List;
 
 @Service
 public class GenreServiceImpl implements GenreService{
-    
     @Autowired
     private GenreMapper genreMapper;
     @Autowired

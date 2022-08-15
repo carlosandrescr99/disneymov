@@ -4,8 +4,6 @@ package com.alkemy.disneymov.entity;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +21,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "actor")
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE genre SET deleted = true WHERE id=?")
+@SQLDelete(sql = "UPDATE actor SET deleted = true WHERE id=?")
 @Where(clause = "deleted=false")
 
 public class Actor{
@@ -43,14 +41,14 @@ public class Actor{
 
     private String story;
     
-    private Boolean deleted;
+    private Boolean deleted = Boolean.FALSE;;
     
     
-    @ManyToMany (mappedBy = "actors", cascade = CascadeType.ALL)
+    @ManyToMany (mappedBy = "actors")
     private List<Video> videos = new ArrayList<>();
     
-    public void addVideo(Video video) {this.videos.add(video);}
-    
-    public void removeVideo(Video video) {this.videos.remove(video);}
+//    public void addVideo(Video video) {this.videos.add(video);}
+//    
+//    public void removeVideo(Video video) {this.videos.remove(video);}
     
 }
