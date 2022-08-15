@@ -18,6 +18,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -25,7 +27,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "video")
 @Getter
 @Setter
-
+@SQLDelete(sql = "UPDATE video SET deleted = true WHERE id=?")
+@Where(clause = "deleted=false")
 public class Video {
 
     @Id
@@ -36,11 +39,13 @@ public class Video {
 
     private String image;
     
-    private Integer rating;
+    private Long rating;
 
     @Column(name = "date_created")
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate dateCreated;
+    
+    private boolean deleted = Boolean.FALSE;
     
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "idgenre", insertable  = false, updatable = false)
