@@ -15,5 +15,4 @@ public class VideoDTO {
     private Long rating;
     private LocalDate dateCreated;
     private Long idgenre;
-    private Boolean deleted;
 }

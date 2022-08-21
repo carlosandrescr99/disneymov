@@ -15,5 +15,4 @@ public class ActorDTO {
     private LocalDate birth;    
     private long weight;
     private String story;   
-    private Boolean deleted;
 }

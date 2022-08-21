@@ -47,8 +47,8 @@ public class Actor{
     @ManyToMany (mappedBy = "actors")
     private List<Video> videos = new ArrayList<>();
     
-//    public void addVideo(Video video) {this.videos.add(video);}
-//    
-//    public void removeVideo(Video video) {this.videos.remove(video);}
+    public void addVideo(Video video) {this.videos.add(video);}
+    
+    public void removeVideo(Video video) {this.videos.remove(video);}
     
 }

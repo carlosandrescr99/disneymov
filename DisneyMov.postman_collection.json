@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "2cd18f73-3888-461a-afbb-1bd425abee37",
+		"name": "DisneyMov",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17972828"
+	},
+	"item": [
+		{
+			"name": "genres",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epgenres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epgenres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epgenres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epgenres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "videos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epgenres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epgenres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "genres",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"pelis1\",\r\n        \"image\": \"imagen x editar\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epgenres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epgenres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actors",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"actor4\",\r\n        \"image\": \"imagen x editar\",\r\n        \"birth\": \"2000-01-01\",\r\n        \"weight\": 65,\r\n        \"story\": \"Personaje creado por primer vez 9 agosto\"   \r\n \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epactors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epactors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "videos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"actor4\",\r\n        \"image\": \"imagen x editar\",\r\n        \"birth\": \"2000-01-01\",\r\n        \"weight\": 65,\r\n        \"story\": \"Personaje creado por primer vez 9 agosto\"   \r\n \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epvideos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epvideos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "genres softdelet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epgenres/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epgenres",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actor softdelet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epgenres/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epgenres",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "video softdelet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/disneymov/epgenres/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"disneymov",
+						"epgenres",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
