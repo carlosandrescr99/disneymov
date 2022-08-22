@@ -10,5 +10,7 @@ public interface ActorService {
     List<ActorDTO> getAllActors();
     void delete(Long id);
     ActorDTO findActorById(Long id);
+    ActorDTO updateById(Long id);
+    ActorDTO update(ActorDTO actorDTO, ActorDTO actorDTOFound);
 //    List<ActorDTO> getByFilters(String name, String birth , Set<Long> videos, String order);
 }  

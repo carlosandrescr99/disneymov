@@ -35,18 +35,35 @@ public class ActorServiceImplem implements ActorService{
         return result;
         
     }
+    
+    public ActorDTO update (ActorDTO actorDTO,ActorDTO actorDTOFound){
+        actorDTOFound.setName(actorDTO.getName());
+        actorDTOFound.setBirth(actorDTO.getBirth());
+        actorDTOFound.setStory(actorDTO.getStory());
+        actorDTOFound.setImage(actorDTO.getImage());
+        actorDTOFound.setWeight(actorDTO.getWeight());        
+        return actorDTOFound;
+        
+    }
+    
     public List<ActorDTO> getAllActors() {
         List<Actor> actors = actorRepository.findAll();
         List<ActorDTO> result = actorMapper.actorList2actorDTOList(actors);
         return result;
     } 
     
+    public ActorDTO updateById(Long id) {
+        Actor actor = actorRepository.findById(id).get();
+        ActorDTO result = actorMapper.actor2actorDTO(actor);
+        return result;
+    } 
+        
     public ActorDTO findActorById(Long id) {
         Actor actor = actorRepository.findById(id).get();
         ActorDTO result = actorMapper.actor2actorDTO(actor);
         return result;
     } 
-    
+
     public void delete(Long id){
         this.actorRepository.deleteById(id);
     }

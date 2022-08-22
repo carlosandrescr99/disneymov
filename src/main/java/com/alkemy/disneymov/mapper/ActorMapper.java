@@ -19,6 +19,7 @@ public class ActorMapper {
     private VideoMapper videoMapper;
     public Actor actorDTO2Actor(ActorDTO actorDTO){
         Actor actor = new Actor();
+        actor.setId(actorDTO.getId());
         actor.setName(actorDTO.getName());
         actor.setImage(actorDTO.getImage());
         actor.setBirth(actorDTO.getBirth());

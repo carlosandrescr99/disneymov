@@ -1,7 +1,7 @@
 package com.alkemy.disneymov.controller;
 
 import com.alkemy.disneymov.dto.ActorDTO;
-import com.alkemy.disneymov.repository.ActorRepository;
+//import com.alkemy.disneymov.repository.ActorRepository;
 import com.alkemy.disneymov.services.ActorService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
-import java.util.Set;
+//import java.util.Set;
+import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
@@ -60,8 +61,16 @@ public class ActorController {
         return ResponseEntity.ok().body(actorDTO);
     }
     
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateById (@RequestBody ActorDTO actorDTO,@PathVariable Long id){
+        ActorDTO actorDTOFound = actorService.findActorById(id);
+        ActorDTO result = actorService.update(actorDTO, actorDTOFound);
+        actorService.save(result);
+        return new ResponseEntity<ActorDTO>(HttpStatus.OK);
+    }
+    
     @DeleteMapping("/{id}")
-    public ResponseEntity <Void> delete(@PathVariable Long id){
+    public ResponseEntity <Void> delete( @PathVariable Long id){
         this.actorService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
